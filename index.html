@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{cart}})</div>
+      <product-display
+        :premium="premium"
+        :cart="cart"
+        @add-to-cart="updateAddCart"
+        @del-from-cart="updateDelCart"
+      ></product-display>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/productDisplay.js"></script>
+    <script src="./components/productDetails.js"></script>
+    <script src="./components/reviewForm.js"></script>
+    <script src="./components/reviewList.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
